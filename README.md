@@ -1,10 +1,9 @@
-## Cubit Impl Annotation
+## cubit_impl_annotation
 #### A package that helps you generate cubit implementations with annotations.
 #### Use it along with cubit_impl_generator package.
 
 ## Usage
 ```dart
-
 abstract interface class PostRepository {
     Future<Either<Failure, List<Post>>> getPosts();
 }
