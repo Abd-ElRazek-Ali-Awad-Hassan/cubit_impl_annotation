@@ -9,7 +9,7 @@ abstract interface class PostRepository {
     Future<Either<Failure, List<Post>>> getPosts();
 }
 
-final class GetPostsCubit extends Cubit<PostsState> {
+final class GetPostsCubit extends Cubit<PostsState> with _$GetPostsCubitMixin {
     GetPostsCubit({
       required PostRepository postRepository,
     }) : super(PostsState.initial()) {
@@ -18,9 +18,9 @@ final class GetPostsCubit extends Cubit<PostsState> {
     
     late final PostRepository _postRepository;
     
-    @ShowLoading(commandName: 'showLoadingLoadPosts')
+    @ShowLoading(commandName: 'ShowLoadingForLoadPosts')
     @OnEither<Failure, List<Post>>(
-      commandName: 'loadPosts',
+      commandName: 'LoadPosts',
       callbackName: 'gettingPostsCallback',
       onSuccess: [ShowSuccess()],
       onFailure: [
@@ -29,8 +29,8 @@ final class GetPostsCubit extends Cubit<PostsState> {
       ],
     )
     void loadPosts() => _$executeAllCommands([
-      _$showLoadingLoadPosts(),
-      _$loadPosts(
+      _$ShowLoadingForLoadPosts(),
+      _$LoadPosts(
         gettingPostsCallback: _postRepository.getPosts,
       ),
     ]);
@@ -49,7 +49,7 @@ OnEither()
 ```
 
 ### commandName
-###### is the name of the generate command method prefixed with ```_$``` to note that it is a generated command
+###### is the name of the generated command prefixed with ```_$``` to note that it is a generated command.
 
 ### callbackName
 ###### is the name of the callback method that will be called when the command is executed.
