@@ -53,4 +53,4 @@ OnEither()
 
 ### callbackName
 ###### is the name of the callback method that will be called when the command is executed.
-###### if you don't specify it, the callback name will be the default value passed in the constructor.
+###### if you don't specify it, the callback name will be the default value passed in the annotation constructor.
