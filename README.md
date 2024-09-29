@@ -53,7 +53,7 @@ OnEither()
 * ###### The method returns a command, whose class name follows this pattern:
   * ###### The commandName with the first letter capitalized.
   * ###### Prefixed by ```_$```.
-  * ###### Followed by the suffix Command to clearly identify it as a command class.
+  * ###### Followed by the suffix ```Command``` to clearly identify it as a command class.
 * ###### Note: Both the generated method and the command class are prefixed with ```_$``` to signify that they are generated code.
 * ###### The generated command class encapsulates the behavior defined by the annotation.
 
@@ -123,7 +123,7 @@ final class _$ShowLoadingForLoadPostsCommand implements _$Command {
 * ###### The generated command class now has the name ```_$ShowLoadingForLoadPostsCommand```, where:
   * ###### The commandName is capitalized.
   * ###### Prefixed with _$.
-  * ###### Suffix Command is added to clearly identify it as a command class..
+  * ###### Suffix ```Command``` is added to clearly identify it as a command class..
 * ###### The generated method returns this command class, which encapsulates the behavior required by the annotation—in this case, showing the loading state while posts are being loaded.
 
 ### callbackName
