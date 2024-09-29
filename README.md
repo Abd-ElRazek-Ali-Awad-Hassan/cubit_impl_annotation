@@ -49,13 +49,13 @@ OnEither()
 
 ### commandName
 #### The commandName in the annotation defines the names of the generated method and the corresponding command class, with the addition of a ```Command``` suffix.
-###### - The generated method will be named by taking the ```commandName```, prefixing it with ```_$```, and keeping the first letter uncapitalized.
-###### - The method returns a command, whose class name follows this pattern:
-######      - The commandName with the first letter capitalized.
-######      - Prefixed by _$.
-######      - Followed by the suffix Command to clearly identify it as a command class.
-###### - Note: Both the generated method and the command class are prefixed with ```_$``` to signify that they are generated code.
-###### - The generated command class encapsulates the behavior defined by the annotation.
+###### * The generated method will be named by taking the ```commandName```, prefixing it with ```_$```, and keeping the first letter uncapitalized.
+###### * The method returns a command, whose class name follows this pattern:
+######      * The commandName with the first letter capitalized.
+######      * Prefixed by ```_$```.
+######      * Followed by the suffix Command to clearly identify it as a command class.
+###### * Note: Both the generated method and the command class are prefixed with ```_$``` to signify that they are generated code.
+###### * The generated command class encapsulates the behavior defined by the annotation.
 
 #### Example
 
@@ -118,13 +118,13 @@ final class _$ShowLoadingForLoadPostsCommand implements _$Command {
 }
 ```
 #### Breakdown
-###### - In this example, the ```commandName``` is ```'showLoadingForLoadPosts'```.
-###### - The generated method is still named ```_$showLoadingForLoadPosts()``` (with no capitalization on the first character) and is prefixed with ```_$``` to indicate it's generated code.
-###### - The generated command class now has the name ```_$ShowLoadingForLoadPostsCommand```, where:
-######      - The commandName is capitalized.
-######      - Prefixed with _$.
-######      - Suffix Command is added to clearly identify it as a command class..
-###### - The generated method returns this command class, which encapsulates the behavior required by the annotation—in this case, showing the loading state while posts are being loaded.
+###### * In this example, the ```commandName``` is ```'showLoadingForLoadPosts'```.
+###### * The generated method is still named ```_$showLoadingForLoadPosts()``` (with no capitalization on the first character) and is prefixed with ```_$``` to indicate it's generated code.
+###### * The generated command class now has the name ```_$ShowLoadingForLoadPostsCommand```, where:
+######      * The commandName is capitalized.
+######      * Prefixed with _$.
+######      * Suffix Command is added to clearly identify it as a command class..
+###### * The generated method returns this command class, which encapsulates the behavior required by the annotation—in this case, showing the loading state while posts are being loaded.
 
 
 ### callbackName
