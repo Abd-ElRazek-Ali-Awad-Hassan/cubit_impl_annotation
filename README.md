@@ -54,7 +54,7 @@ OnEither()
   * ###### The commandName with the first letter capitalized.
   * ###### Prefixed by ```_$```.
   * ###### Followed by the suffix ```Command``` to clearly identify it as a command class.
-* ###### __Note__: Both the generated method and the command class are prefixed with ```_$``` to signify that they are generated code.
+* ###### **Note** : Both the generated method and the command class are prefixed with ```_$``` to signify that they are generated code.
 * ###### The generated command class encapsulates the behavior defined by the annotation.
 
 #### Example
