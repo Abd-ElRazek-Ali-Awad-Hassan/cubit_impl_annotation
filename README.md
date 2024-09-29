@@ -47,7 +47,7 @@ ShowLoadingByCalling()
 OnEither()
 ```
 
-### commandName
+### ```commandName```
 #### The commandName in the annotation defines the names of the generated method and the corresponding command class, with the addition of a ```Command``` suffix.
 * ###### The generated method will be named by taking the ```commandName```, prefixing it with ```_$```, and keeping the first letter uncapitalized.
 * ###### The method returns a command, whose class name follows this pattern:
@@ -126,6 +126,6 @@ final class _$ShowLoadingForLoadPostsCommand implements _$Command {
   * ###### Suffix ```Command``` is added to clearly identify it as a command class..
 * ###### The generated method returns this command class, which encapsulates the behavior required by the annotation—in this case, showing the loading state while posts are being loaded.
 
-### callbackName
+### ```callbackName```
 ###### is the name of the callback method that will be called when the command is executed.
 ###### if you don't specify it, the callback name will be the default value passed in the annotation constructor.
