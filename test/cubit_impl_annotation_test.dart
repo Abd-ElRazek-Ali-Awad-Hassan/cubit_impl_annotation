@@ -3,40 +3,32 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Cubit Impl Annotations', () {
-    test('showLoading is a CubitMethodCommand', () {
+    test('$ShowLoading is a CubitMethodCommand', () {
       expect(const ShowLoading(), isA<CubitMethodCommand>());
     });
 
-    test('showLoadingByCalling is a CubitMethodCommand', () {
-      expect(const ShowLoadingByCalling(), isA<CubitMethodCommand>());
-    });
-
-    test('showLoadingByCalling requires callback', () {
-      expect(const ShowLoadingByCalling(), isA<RequiringCallback>());
-    });
-
-    group('onEither', () {
-      test('onEither is a CubitMethodCommand', () {
+    group('$OnEither', () {
+      test('$OnEither is a CubitMethodCommand', () {
         expect(const OnEither(), isA<CubitMethodCommand>());
       });
 
-      test('onEither requires callback', () {
+      test('$OnEither requires callback', () {
         expect(const OnEither(), isA<RequiringCallback>());
       });
 
       group('onSuccessCommands', () {
         for (final e in const [
           ShowSuccess(),
-          ShowSuccessByCalling(callbackName: 'callback'),
+          OnSuccessDo(callbackName: 'callback'),
         ]) {
           test('${e.runtimeType} is an onSuccessCommand', () {
             expect(e, isA<OnSuccessCommand>());
           });
         }
 
-        test('showSuccessByCalling requires callback', () {
+        test('$OnSuccessDo requires callback', () {
           expect(
-            const ShowSuccessByCalling(callbackName: 'callback'),
+            const OnSuccessDo(callbackName: 'callback'),
             isA<RequiringCallback>(),
           );
         });
@@ -47,16 +39,16 @@ void main() {
           ReportServerFailure(),
           ReportNetworkFailure(),
           ReportAuthorizedAccessFailure(),
-          ReportFailureByCalling(callbackName: 'callback'),
+          OnFailureDo(callbackName: 'callback'),
         ]) {
           test('${failure.runtimeType} is an onFailureCommand', () {
             expect(failure, isA<OnFailureCommand>());
           });
         }
 
-        test('ReportFailureByCalling requires callback', () {
+        test('$OnFailureDo requires callback', () {
           expect(
-            const ReportFailureByCalling(callbackName: 'callback'),
+            const OnFailureDo(callbackName: 'callback'),
             isA<RequiringCallback>(),
           );
         });
