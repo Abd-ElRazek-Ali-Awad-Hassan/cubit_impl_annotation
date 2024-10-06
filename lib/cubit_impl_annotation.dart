@@ -1,5 +1,5 @@
-export 'src/cubit_method_commands/cubit_method_command.dart';
-export 'src/cubit_method_commands/interfaces/requiring_callback.dart';
-export 'src/cubit_method_commands/on_failure_command.dart';
-export 'src/cubit_method_commands/on_success_command.dart';
+export 'src/async_operations/async_operation_that_emits.dart';
+export 'src/async_operations/interfaces/requiring_callback.dart';
+export 'src/async_operations/on_failure_action.dart';
+export 'src/async_operations/on_success_action.dart';
 export 'src/generate_cubit_impl.dart';

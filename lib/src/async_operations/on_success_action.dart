@@ -1,12 +1,12 @@
 import 'interfaces/requiring_callback.dart';
 
-sealed class OnSuccessCommand {}
+sealed class OnSuccessAction {}
 
-final class ShowSuccess implements OnSuccessCommand {
+final class ShowSuccess implements OnSuccessAction {
   const ShowSuccess();
 }
 
-final class OnSuccessDo implements OnSuccessCommand, RequiringCallback {
+final class OnSuccessDo implements OnSuccessAction, RequiringCallback {
   const OnSuccessDo({
     required this.callbackName,
   });

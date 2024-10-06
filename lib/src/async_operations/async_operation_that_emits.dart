@@ -1,17 +1,17 @@
 import 'package:failures/failures.dart';
 
 import 'interfaces/requiring_callback.dart';
-import 'on_failure_command.dart';
-import 'on_success_command.dart';
+import 'on_failure_action.dart';
+import 'on_success_action.dart';
 
-sealed class CubitMethodCommand {}
+sealed class AsyncOperationThatEmits {}
 
-final class ShowLoading implements CubitMethodCommand {
+final class ShowLoading implements AsyncOperationThatEmits {
   const ShowLoading();
 }
 
 final class OnEither<FailureType extends Failure, SuccessType>
-    implements CubitMethodCommand, RequiringCallback {
+    implements AsyncOperationThatEmits, RequiringCallback {
   const OnEither({
     this.onSuccess = const [],
     this.onFailure = const [],
@@ -21,6 +21,6 @@ final class OnEither<FailureType extends Failure, SuccessType>
   @override
   final String callbackName;
 
-  final List<OnSuccessCommand> onSuccess;
-  final List<OnFailureCommand> onFailure;
+  final List<OnSuccessAction> onSuccess;
+  final List<OnFailureAction> onFailure;
 }

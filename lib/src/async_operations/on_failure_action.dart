@@ -2,22 +2,22 @@ import 'package:failures/failures.dart';
 
 import 'interfaces/requiring_callback.dart';
 
-sealed class OnFailureCommand {}
+sealed class OnFailureAction {}
 
-final class ReportServerFailure implements OnFailureCommand {
+final class ReportServerFailure implements OnFailureAction {
   const ReportServerFailure();
 }
 
-final class ReportNetworkFailure implements OnFailureCommand {
+final class ReportNetworkFailure implements OnFailureAction {
   const ReportNetworkFailure();
 }
 
-final class ReportAuthorizedAccessFailure implements OnFailureCommand {
+final class ReportAuthorizedAccessFailure implements OnFailureAction {
   const ReportAuthorizedAccessFailure();
 }
 
 final class OnFailureDo<FailureType extends Failure>
-    implements OnFailureCommand, RequiringCallback {
+    implements OnFailureAction, RequiringCallback {
   const OnFailureDo({
     required this.callbackName,
   });

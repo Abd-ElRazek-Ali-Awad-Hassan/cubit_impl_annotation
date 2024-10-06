@@ -32,7 +32,7 @@ final class GetPostsCubit extends Cubit<PostsState> with _$GetPostsCubitMixin {
 }
 ```
 
-###### as you can see, our package CubitImplGenerator will generate commands based on annotations
+###### as you can see, our package CubitImplGenerator will generate methods based on annotations
 ```dart
 ShowLoading()
 ```

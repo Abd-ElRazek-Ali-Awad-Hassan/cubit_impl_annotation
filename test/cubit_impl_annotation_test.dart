@@ -3,13 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Cubit Impl Annotations', () {
-    test('$ShowLoading is a CubitMethodCommand', () {
-      expect(const ShowLoading(), isA<CubitMethodCommand>());
+    test('$ShowLoading is an $AsyncOperationThatEmits', () {
+      expect(const ShowLoading(), isA<AsyncOperationThatEmits>());
     });
 
     group('$OnEither', () {
-      test('$OnEither is a CubitMethodCommand', () {
-        expect(const OnEither(), isA<CubitMethodCommand>());
+      test('$OnEither is an $AsyncOperationThatEmits', () {
+        expect(const OnEither(), isA<AsyncOperationThatEmits>());
       });
 
       test('$OnEither requires callback', () {
@@ -21,8 +21,8 @@ void main() {
           ShowSuccess(),
           OnSuccessDo(callbackName: 'callback'),
         ]) {
-          test('${e.runtimeType} is an onSuccessCommand', () {
-            expect(e, isA<OnSuccessCommand>());
+          test('${e.runtimeType} is an $OnSuccessAction', () {
+            expect(e, isA<OnSuccessAction>());
           });
         }
 
@@ -41,8 +41,8 @@ void main() {
           ReportAuthorizedAccessFailure(),
           OnFailureDo(callbackName: 'callback'),
         ]) {
-          test('${failure.runtimeType} is an onFailureCommand', () {
-            expect(failure, isA<OnFailureCommand>());
+          test('${failure.runtimeType} is an $OnFailureAction', () {
+            expect(failure, isA<OnFailureAction>());
           });
         }
 
