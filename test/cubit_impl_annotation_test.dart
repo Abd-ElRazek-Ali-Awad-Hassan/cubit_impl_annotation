@@ -1,4 +1,5 @@
 import 'package:cubit_impl_annotation/cubit_impl_annotation.dart';
+import 'package:failures/failures.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -39,16 +40,16 @@ void main() {
           ReportServerFailure(),
           ReportNetworkFailure(),
           ReportAuthorizedAccessFailure(),
-          OnFailureDo(callbackName: 'callback'),
+          OnFailureDo<CacheFailure>(callbackName: 'callback'),
         ]) {
           test('${failure.runtimeType} is an $OnFailureAction', () {
             expect(failure, isA<OnFailureAction>());
           });
         }
 
-        test('$OnFailureDo requires callback', () {
+        test('${OnFailureDo<CacheFailure>} requires callback', () {
           expect(
-            const OnFailureDo(callbackName: 'callback'),
+            const OnFailureDo<CacheFailure>(callbackName: 'callback'),
             isA<RequiringCallback>(),
           );
         });
