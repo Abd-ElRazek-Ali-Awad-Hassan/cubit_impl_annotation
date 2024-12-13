@@ -5,17 +5,13 @@ publish_to: 'none'
 homepage:
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
-  flutter: ">=1.17.0"
+  sdk: ^3.3.4
 
 dependencies:
-  flutter:
-    sdk: flutter
   failures:
-    git:
-      url: https://github.com/mahmood1996/failures.git
+    path: ../failures
+  equatable: ^2.0.5
+  fpdart: any
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0
+  test: any
