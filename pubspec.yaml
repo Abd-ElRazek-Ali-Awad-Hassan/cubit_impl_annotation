@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   failures:
-    git: https://github.com/mahmood1996/failures.git
+    git: https://github.com/Abd-ElRazek-Ali-Awad-Hassan/failures.git
   equatable: ^2.0.5
   fpdart: any
 
